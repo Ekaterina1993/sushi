@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+    <h1>Profile</h2>
+    <form class="form" action="." method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <div class="row">
+            <div class="col-md-3">
+                {% if request.user.avatar %}
+                    <img class="img-fluid" src="{{request.user.avatar.url}}"/>
+                {% else %}
+                    <img class="img-fluid" src='{% static 'img/avatar.png' %}'/>
+                {% endif %}
+            </div>
+            <div class="col-md-9 d-flex align-items-center">
+                <br/><br/>
+                <div class="upload-btn-wrapper">
+                  <button class="upload-btn btn btn-success">Update Image</button>
+                  <input type="file" name="avatar" />
+                </div>
+            </div>
+        </div>
+        {% crispy form %}
+    </form>
+{% endblock %}
