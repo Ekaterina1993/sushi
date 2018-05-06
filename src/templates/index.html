@@ -21,6 +21,10 @@
 
             </div>
         </div>
+        <!-- разделы -->
+        {% for s in sections %}
+            {% include 'catalog/elements/section_item.html' %}
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

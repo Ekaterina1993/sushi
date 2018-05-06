@@ -1,0 +1,11 @@
+{% load thumbnail %}
+
+<div class="section" style="border: 1px solid red">
+    <a href='{% url 'catalog:view_section' s.slug %}'>
+        <h1>{{s.title}}</h1>
+
+        {% thumbnail s.image '100x100' crop="top" as im %}
+            <img src="{{ im.url }}" alt="">
+        {% endthumbnail %}
+    </a>
+</div>

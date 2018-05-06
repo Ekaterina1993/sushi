@@ -23,5 +23,6 @@ from .views import index
 urlpatterns = [
     path('', index, name='home'),
     path('users/', include(('users.urls', 'users'), namespace='users')),
+    path('catalog/', include(('catalog.urls', 'catalog'), namespace='catalog')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
