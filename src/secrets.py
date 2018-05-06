@@ -1,8 +1,8 @@
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'sushi',
-        'USER': 'v',
+        'NAME': 'sushi.sqlite3',
+        'USER': '',
         'PASSWORD': '',
         'HOST': ''
     }
