@@ -1,0 +1,11 @@
+{% load thumbnail %}
+
+<div class="product" style="border: 1px solid red">
+    <a href='#'>
+        <h1>{{p.title}}</h1>
+
+        {% thumbnail p.image '100x100' crop="top" as im %}
+            <img src="{{ im.url }}" alt="">
+        {% endthumbnail %}
+    </a>
+</div>

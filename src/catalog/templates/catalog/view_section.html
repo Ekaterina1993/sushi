@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+
+        <h1>{{section.title}}</h1>
+
+        <!-- товары/продукты -->
+        {% for p in products %}
+            {% include 'catalog/elements/product_item.html' %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
