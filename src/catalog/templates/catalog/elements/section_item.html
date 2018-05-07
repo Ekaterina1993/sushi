@@ -1,22 +1,16 @@
 {% load thumbnail %}
 
-<!-- блок с секциями-->
+<!-- карточка раздела (выводится на главной) -->
 
-<div class="container">
-    <div class="row">
-        <!--    <div class="sections">-->
-        <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="item">
-                <a href="{% url 'catalog:view_section' s.slug %}">
-                    {% thumbnail s.image '100x100' crop="top" as im %}
-                        <img src="{{ im.url }}" class="image">
-                    {% endthumbnail %}                                      
-                    <div class="title">                        
-                            <p><span>{{s.title}}</span></p>
-                    </div>               
-            </a>
+<div class="col-lg-3 col-md-3 col-sm-6">
+    <div class="item">
+        <a href="{% url 'catalog:view_section' s.slug %}">
+            {% thumbnail s.image '100x100' crop="top" as im %}
+                <img src="{{ im.url }}" class="image">
+            {% endthumbnail %}
+            <div class="title">
+                <p><span>{{s.title}}</span></p>
             </div>
-        </div>
-        <!--    </div>-->
+        </a>
     </div>
 </div>
