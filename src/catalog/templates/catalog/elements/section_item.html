@@ -1,23 +1,22 @@
 {% load thumbnail %}
 
+<!-- блок с секциями-->
 
-
-            <!-- блок с секциями-->
+<div class="container">
+    <div class="row">
+        <!--    <div class="sections">-->
+        <div class="col-lg-3 col-md-3 col-sm-6">
             <div class="item">
-                <a href="{% url 'catalog:view_section' s.slug %}" class="col-lg-4 col-md-4 col-sm-6 animated" data-animation="fadeInUp" data-animation-delay="400">
+                <a href="{% url 'catalog:view_section' s.slug %}">
                     {% thumbnail s.image '100x100' crop="top" as im %}
-                        <img src="{{ im.url }}" alt="" class="img-responsive" alt="Роллы/Суши/Сеты">
-                    {% endthumbnail %}                   
-                   
-                    <div class="caption">
-                    <div class="title">
-                        <div>
-                            <h1>{{s.title}}</h1>
-                        </div>
-                    </div>
- 
-                </div>
+                        <img src="{{ im.url }}" class="image">
+                    {% endthumbnail %}                                      
+                    <div class="title">                        
+                            <p><span>{{s.title}}</span></p>
+                    </div>               
             </a>
-
             </div>
         </div>
+        <!--    </div>-->
+    </div>
+</div>
