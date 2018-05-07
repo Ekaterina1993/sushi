@@ -2,15 +2,16 @@
 {% load static %}
 
 {% block content %}
-<div class="row">
+<div class="row white">
     <div class="col-md-12">
 
         <h1>{{section.title}}</h1>
-
+<div class="row">
         <!-- товары/продукты -->
         {% for p in products %}
             {% include 'catalog/elements/product_item.html' %}
         {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}

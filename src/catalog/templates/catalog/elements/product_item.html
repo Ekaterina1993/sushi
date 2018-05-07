@@ -1,11 +1,22 @@
 {% load thumbnail %}
 
-<div class="product" style="border: 1px solid red">
-    <a href='#'>
-        <h1>{{p.title}}</h1>
 
-        {% thumbnail p.image '100x100' crop="top" as im %}
-            <img src="{{ im.url }}" alt="">
+
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+    <div class="product">
+        <a href='#'>
+
+        {% thumbnail p.image '200x200' crop="top" as im %}
+            <img src="{{ im.url }}" class="image-size">
         {% endthumbnail %}
-    </a>
+        <p class="name">{{p.title}}</p>
+        <p class="price">100p.</p>
+        <span class="counter"><input type="text" name="counter" value="1"><i class="ui-spinner-button ui-spinner-up plus"><span></span></i><i class="ui-spinner-button ui-spinner-down minus"><span></span></i>
+        
+        </span>
+        </a>
+        <a href="#" class="button"/>В КОРЗИНУ</a>
+        
+    
+    </div>
 </div>
