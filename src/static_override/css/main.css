@@ -5,6 +5,7 @@ body {
     background-size: cover;
     min-height: 700px;
     background-attachment: fixed;
+    color: white;
 
 }
 
@@ -84,11 +85,11 @@ p.price {
     /*    line-height: 15px;*/
     /*    text-align: left;*/
     left: 1%;
+    margin: 10px;
 }
 
 p.left {
     float: left;
-    padding-top: 6%;
 }
 
 
@@ -280,4 +281,22 @@ a:hover {
 .opacity-text:hover .info {
     -webkit-transition-delay: 0.1s;
     transition-delay: 0.1s;
+}
+
+
+a.add-to-cart {
+    margin: 10px;
+}
+
+h1.page-title {
+    color: white;
+    border-bottom: 1px solid silver;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

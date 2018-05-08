@@ -1,41 +1,27 @@
 {% load thumbnail %}
 
-
-
 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product dark">
-        
         <a href='#'>
-        <div class="opacity-text">
-        {% thumbnail p.image '200x200' crop="top" as im %}
-            <img src="{{ im.url }}" class="image-size">
-        {% endthumbnail %}
-        <div class="caption">
-        <span class="title">Заголовок картинки</span>
-        <span class="info">Краткое описание или анонс записи</span>
-    </div>
+            <div class="opacity-text">
+            {% thumbnail p.image '200x200' crop="top" as im %}
+                <img src="{{ im.url }}" class="image-size"> 
+            {% endthumbnail %}
+                <div class="caption">
+                    <span class="title">{{p.title}}</span>
+                    <span class="info">Краткое описание или анонс записи</span>
+                </div>
             </div>
-<!--    </div>-->
-         </a>
-    <p class="name">{{p.title}}</p>
-    <p class="price left">100p.</p>
-    <!--
-        <span class="counter"><input type="text" name="counter" value="1">
-        <i class="ui-spinner-button ui-spinner-up plus"><span></span></i>
-        <i class="ui-spinner-button ui-spinner-down minus"><span></span>
-        </i>
-        
-        </span>
--->
-    <div class="amount">
-        <span class="down">-</span>
-        <input type="text" value="1" />
-        <span class="up">+</span>
-    </div>
+        </a>
+        <p class="name">{{p.title}}</p>
+        <p class="price left">100p.</p>
 
-    <div class="">
-        <a href="#" class="button">В КОРЗИНУ</a>
-    </div>
+        <div class="amount">
+            <span class="down">-</span>
+            <input type="number" value="1" min="1" max="9999" step="1" />
+            <span class="up">+</span>
+        </div>
 
-</div>
+        <a href="#" class="button add-to-cart">В КОРЗИНУ</a>
+    </div>
 </div>

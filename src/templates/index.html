@@ -1,12 +1,17 @@
 {% extends 'base.html' %} 
 {% load static %} 
+
 {% block content %}
-
-
-    <div class="row">
-        <!-- разделы -->
-        {% for s in sections %}
-            {% include 'catalog/elements/section_item.html' %}
-        {% endfor %}
+<div class="row">
+    <div class="col-md-12">
+        Текст здесь
     </div>
+</div>
+
+<div class="row">
+    <!-- разделы -->
+    {% for s in sections %}
+        {% include 'catalog/elements/section_item.html' %}
+    {% endfor %}
+</div>
 {% endblock %}
