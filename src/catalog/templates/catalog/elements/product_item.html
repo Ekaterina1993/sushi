@@ -3,14 +3,20 @@
 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product dark">
         <a href='#'>
+          <div class="ovHid-prod">
+                      <div class="animation">
             <div class="opacity-text">
             {% thumbnail p.image '200x200' crop="top" as im %}
-                <img src="{{ im.url }}" class="image-size"> 
+               
+                <img src="{{ im.url }}" class=""> 
+                
             {% endthumbnail %}
                 <div class="caption">
                     <span class="title">{{p.title}}</span>
                     <span class="info">Краткое описание или анонс записи</span>
                 </div>
+            </div>
+            </div>
             </div>
         </a>
         <p class="name">{{p.title}}</p>

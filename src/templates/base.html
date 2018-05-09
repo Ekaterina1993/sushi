@@ -1,55 +1,83 @@
-{% extends "initial.html" %}
-{% load static %}
+{% extends "initial.html" %} {% load static %} {% block body %}
 
-{% block body %}
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-	<a class="navbar-brand" href="{% url 'home' %}">FS AUTH</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarCollapse">
-       {% if user.is_authenticated %}
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item">
-				<a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ user.email }}
-                </a>
-				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
-					<a class="dropdown-item" href="{% url 'users:change_password' %}">Change password</a>
-					<a class="dropdown-item" href="{% url 'users:profile' %}">Profile</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="{% url 'users:logout' %}">Log out</a>
-				</div>
-			</li>
-		</ul>
-       {% else %}
-		<form class="form-inline ml-auto">
-			<a href="{% url 'users:login' %}" class="btn btn-outline-secondary">Log in</a>
-			<a href="{% url 'users:signup' %}" class="btn btn-primary ml-2">Sign up</a>
-		</form>
-       {% endif %}
 
-	</div>
-</nav>
+<div class="time">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-12">
+                <h5 class="left">Время работы: Пн-Вс<span class="old">&nbsp;с 10:00 до 22:00</span><br>Доставка суши в Воронеже</h5>
+                <h5 class="right"><span class="bold">&nbsp;<a href="tel:291-98-10" class="numberup"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;291-98-10</a></span></h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <h1>Мы на карте</h1>
+                <p>Наш адрес: г.Воронеж, центральный парк "Динамо"</p>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 <main role="main" class="container">
-	<div class="row">
-		<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12">
             {% for message in messages %}
-		        <div class="alert{% if message.tags %} alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}{% endif %} alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&#215;</button>
-                {{ message|safe }}
-                </div>
+            <div class="alert{% if message.tags %} alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}{% endif %} alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&#215;</button> {{ message|safe }}
+            </div>
             {% endfor %}
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             {% block breadcrumbs %}{% endblock %}
         </div>
-	</div>
+    </div>
 
-    {% block content %}
-    {% endblock %}
+    {% block content %} {% endblock %}
 </main>
+
+
+
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-xs-5 col-lg-5 col-sm-5">
+                <p class="left">© 2018"Эль Фиш"</p>
+
+            </div>
+                <div class="col-md-2 col-xs-2 col-lg-2 col-sm-2 icons">
+                <span><a href="https://vk.ru" class="social"><i class="fa fa-vk" aria-hidden="true"></i></a></span>
+
+                <span><a href="https://istagram.com" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a></span>
+
+
+            </div>
+ <div class="col-md-5 col-xs-5 col-lg-5 col-sm-5">
+                <p class="right">Разработка сайта - <a href="mailto:astahova933@yandex.ru" class="web">ARTastahova</a></p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
