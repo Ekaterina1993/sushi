@@ -9,7 +9,7 @@ body {
 
 }
 
-.time {
+.header {
     color: #91be3f;
     height: 50px;
     /*    background: rgba(0, 0, 0, 0.71);*/
@@ -25,13 +25,13 @@ body {
 }
 
 
-.time h5.left {
+.header h5.left {
     float: left;
     padding-top: 13px;
     font-size: 12px;
 }
 
-.time h5.right {
+.header h5.right {
     float: right;
     padding-top: 13px;
     font-size: 12px;
@@ -47,9 +47,55 @@ a.numberup:hover {
 }
 
 
+.menu {
+    background: white;
+    height: 72px;
+/*    font-size: 20px;*/
+    color: black;
+    padding: 2%;
+    margin-left: -2%;
+    margin-right: -2%;
 
 
+}
 
+.menu p {
+    display: inline-block;
+    padding-left: 2%;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+.menu p:hover {
+    display: inline-block;
+    padding-left: 2%;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: 14px;
+    
+    
+
+}
+
+.basket img{
+    height: 20px;
+    width: 20px;
+    
+}
+
+
+.sales{
+    background-image: url(../img/sp.png);
+/*    height: 600px;*/
+    
+       background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 600px;
+    background-attachment: fixed;
+    color: white;
+}
 
 
 
@@ -414,6 +460,7 @@ input[type=number]::-webkit-outer-spin-button {
 .social {
     color: #91be3f;
 }
+
 .social:hover {
     color: white;
 }
