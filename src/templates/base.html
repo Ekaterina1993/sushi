@@ -1,33 +1,42 @@
-{% extends "initial.html" %} {% load static %} {% block body %}
+{% extends "initial.html" %} 
 
+{% load static %} 
 
-
+{% block body %}
 <div class="header">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-12">
-                <h5 class="left">Время работы: Пн-Вс<span class="old">&nbsp;с 10:00 до 22:00</span><br>Доставка суши в Воронеже</h5>
-                <h5 class="right"><span class="bold">&nbsp;<a href="tel:291-98-10" class="numberup"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;291-98-10</a></span></h5>
+                <h5 class="left">Время работы: Пн-Вс
+                    <span class="old">&nbsp;с 10:00 до 22:00</span>
+                    <br>Доставка суши в Воронеже
+                </h5>
+                <h5 class="right">
+                    <span class="bold">&nbsp;
+                        <a href="tel:291-98-10" class="numberup">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                        &nbsp;291-98-10
+                        </a>
+                    </span>
+                </h5>
             </div>
         </div>
     </div>
 </div>
 
 
-
-
 <div class="menu">
     <div class="container">
         <div class="row">
             <div class="col-md-2 col-xs-2 col-sm-2">
-                <img src="../static_override/img/1.jpg" alt="logo" class="logo">
+                <img src="{% static 'img/logo.jpg' %}" alt="logo" class="logo">
             </div>
             <div class="col-md-8 col-xs-8 col-sm-8">
-                <p>главная</p>
-                <p>меню</p>
-                <p>доставка</p>
-                <p>о нас</p>
-                <p>контакты</p>
+                <p><a href="{% url 'home' %}">главная</a></p>
+                <p><a href="{% url 'home' %}">меню</a></p>
+                <p><a href="{% url 'delivery' %}">доставка</a></p>
+                <p><a href="{% url 'about' %}">о нас</a></p>
+                <p><a href="{% url 'contacts' %}">контакты</a></p>
 
             </div>
             <div class="col-md-2 col-xs-2 col-sm-2">
@@ -44,49 +53,23 @@
 </div>
 
 
-<div class="sales">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-xs-12 col-sm-12">
+{% block raw_content %}
 
+<div class="container">
+    {% block content %}
+    {% endblock %}
 
-            </div>
-        </div>
-    </div>
 </div>
 
 
-
-
-
-
-<main role="main" class="container">
-    <div class="row">
-        <div class="col-md-12">
-            {% for message in messages %}
-            <div class="alert{% if message.tags %} alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}{% endif %} alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&#215;</button> {{ message|safe }}
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            {% block breadcrumbs %}{% endblock %}
-        </div>
-    </div>
-
-    {% block content %} {% endblock %}
-</main>
-
-
+{% endblock %}
 
 
 <div class="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-5 col-xs-5 col-lg-5 col-sm-5">
-                <p class="left">© 2018"Эль Фиш"</p>
+                <p class="left">© 2018 "Эль Фиш"</p>
 
             </div>
             <div class="col-md-2 col-xs-2 col-lg-2 col-sm-2 icons">
