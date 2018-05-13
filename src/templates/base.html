@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-12 col-12">
                 <h5 class="left">Время работы: Пн-Вс
-                    <span class="old">&nbsp;с 10:00 до 22:00</span>
+                    <span class="old"><strong>&nbsp;с 10:00 до 22:00</strong></span>
                     <br>Доставка суши в Воронеже
                 </h5>
                 <h5 class="right">
@@ -33,9 +33,9 @@
             </div>
             <div class="col-md-8 col-xs-8 col-sm-8">
                 <p><a href="{% url 'home' %}">главная</a></p>
-                <p><a href="{% url 'home' %}">меню</a></p>
-                <p><a href="{% url 'delivery' %}">доставка</a></p>
-                <p><a href="{% url 'about' %}">о нас</a></p>
+                <p><a href="{% url 'home' %}">меню&nbsp;<i class="fa fa-angle-double-down" aria-hidden="true"></i></a></p>
+                <p><a href="{% url 'delivery' %}">доставка и оплата</a></p>
+<!--                <p><a href="{% url 'about' %}">о нас</a></p>-->
                 <p><a href="{% url 'contacts' %}">контакты</a></p>
 
             </div>
@@ -43,9 +43,9 @@
                 <div class="basket">
                     <a class="cart-link" href="#">Корзина</a>
                     <span class="relative">
-			<img class="cart-image" src="../static_override/img/commerce.png" alt="img">
-			<span class="basket-quantity">1</span></span>
-                    <span class="cart-sum"><strong>200.0 руб</strong></span>
+			<img src="{% static 'img/commerce.png' %}" alt="logo" class="basket">
+			<span class="basket-quantity">2</span></span>
+                    <span class="cart-sum"><strong>2220.0 руб</strong></span>
                 </div>
             </div>
         </div>

@@ -1,15 +1,13 @@
-{% extends 'base.html' %} 
-{% load static %} 
-
-
-
-{% block raw_content %}
+{% extends 'base.html' %} {% load static %} {% block raw_content %}
 
 <div class="sales">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-xs-12 col-sm-12">
-
+                <div class="sales-position">
+                    <h1>Акции месяца</h1>
+                    <a href="#"><button type="button" class="sales-info" >подробнее</button></a>
+                    </div>
 
             </div>
         </div>
@@ -21,7 +19,8 @@
         <div class="col-md-12">
             {% for message in messages %}
             <div class="alert{% if message.tags %} alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}{% endif %} alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&#215;</button> {{ message|safe }}
+                <!--              <a href="#" class="button add-to-cart">корзина</a>-->
+                {{ message|safe }}
             </div>
             {% endfor %}
         </div>
@@ -32,11 +31,10 @@
         </div>
     </div>
 </main>
-
-<div class="row">
-    <!-- разделы -->
-    {% for s in sections %}
-        {% include 'catalog/elements/section_item.html' %}
-    {% endfor %}
+<div class="block-align">
+    <div class="row">
+        <!-- разделы -->
+        {% for s in sections %} {% include 'catalog/elements/section_item.html' %} {% endfor %}
+    </div>
 </div>
 {% endblock %}
