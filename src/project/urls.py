@@ -17,6 +17,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic import TemplateView
 
 from .views import index
 
@@ -24,5 +25,8 @@ urlpatterns = [
     path('', index, name='home'),
     path('users/', include(('users.urls', 'users'), namespace='users')),
     path('catalog/', include(('catalog.urls', 'catalog'), namespace='catalog')),
+    path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
+    path('contacts/', TemplateView.as_view(template_name='contacts.html'), name='contacts'),
+    path('delivery/', TemplateView.as_view(template_name='delivery.html'), name='delivery'),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

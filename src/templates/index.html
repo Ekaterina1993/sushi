@@ -3,12 +3,35 @@
 
 
 
-{% block content %}
-<div class="row">
-    <div class="col-md-12">
-        Текст здесь
+{% block raw_content %}
+
+<div class="sales">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 col-sm-12">
+
+
+            </div>
+        </div>
     </div>
 </div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {% for message in messages %}
+            <div class="alert{% if message.tags %} alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}{% endif %} alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&#215;</button> {{ message|safe }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {% block breadcrumbs %}{% endblock %}
+        </div>
+    </div>
+</main>
 
 <div class="row">
     <!-- разделы -->
